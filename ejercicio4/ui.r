@@ -24,14 +24,16 @@ shinyUI(fluidPage(
                               verbatimTextOutput("matriz") )))),
                        
       tabPanel("PCA",
-               withMathJax(includeMarkdown('clasificador_PCR.md'))) # , 
+               withMathJax(includeMarkdown('clasificador_PCR.md')))  , 
       
-      #tabPanel("Algo más util",
-       #        tabItem(tabName="foo3",
-        #       fluidRow(column(5, selectInput("Especie", label = h3("Especie"), 
-         #                 choices = list("setosa" = 1, "versicolor" = 2, "virginica" = 3), 
-          #                  selected = 1)),
-           #             column(5,plotOutput("ggplotplot"))))) 
+      tabPanel("Algo más util"#,
+              # tabItem(tabName="foo3",
+               #fluidRow(column(5, selectInput("Especie", label = ("Especie"), 
+                #          choices = list("setosa" = "setosa",
+                 #                        "versicolor" = "versicolor", "virginica" = 'virginica'), 
+                  #          selected = 1)),
+                   #     column(5,plotOutput("ggplotplot"))))
+              ) 
       )
     )
    )      

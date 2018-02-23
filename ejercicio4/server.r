@@ -35,6 +35,7 @@ shinyServer(function(input, output)
                             show_pixels(grid=c(16,16),
                           brush=matrix(c(.5,1,.5,1,1,1,.5,1,.5),3,3))
                             )
+                   
     output$matriz <- renderPrint({
       entrada <- r.scale(dig)
       proj <-entrada%*%z
@@ -43,22 +44,22 @@ shinyServer(function(input, output)
       Y.hat <- Y.hat - 1 
       Y.hat
     })
-    
+                  
     })
+    
     
 #    La parte de ggplot
-    dat <- reactive({
-      subset <- subset(iris, Species ==input$Especie)
-      output$matriz <-subset
-    })
-#    output$ggplotplot<-renderPlot({
- #     p1 <- ggplot(dat() ,aes(x=Sepal.Length,y=Sepal.Width))+
-  #      geom_point() + theme_minimal()
-   #   p1
-    #  })
+   # dat <- reactive({
+  #    subset <- subset(iris, Species ==as.character(input$Especie))
+   #   subset
+  #  })
+   # output$ggplotplot<-renderPlot({
+    #  p1 <- ggplot(dat() ,aes(x=Sepal.Length,y=Sepal.Width))+
+     #   geom_point() + theme_minimal()
+    #  p1
+     # })
     
     
-
     
     
     
