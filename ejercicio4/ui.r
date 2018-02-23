@@ -9,7 +9,7 @@ library(shinydashboard)
 library(pixels)
 shinyUI(fluidPage(
   theme = shinytheme("cerulean"),
-  h1("Clasificación usando PCA!"),
+  h1("Hola Acatlán, Clasificación usando PCA!"),
   
   mainPanel(
     tabsetPanel(
@@ -24,12 +24,15 @@ shinyUI(fluidPage(
                               verbatimTextOutput("matriz") )))),
                        
       tabPanel("PCA",
-               withMathJax(includeMarkdown('clasificador_PCR.md'))),
-      tabPanel("Doc de la app",
-             tabItem(tabName="foo2",
-                     withMathJax(includeMarkdown("doc_app.Rmd")) ) 
+               withMathJax(includeMarkdown('clasificador_PCR.md'))) # , 
+      
+      #tabPanel("Algo más util",
+       #        tabItem(tabName="foo3",
+        #       fluidRow(column(5, selectInput("Especie", label = h3("Especie"), 
+         #                 choices = list("setosa" = 1, "versicolor" = 2, "virginica" = 3), 
+          #                  selected = 1)),
+           #             column(5,plotOutput("ggplotplot"))))) 
       )
     )
    )      
   )
-)           

@@ -5,6 +5,7 @@
 ###############################################################
 library(shiny) 
 library(pixels)
+library(ggplot2)
 
 
 shinyServer(function(input, output) 
@@ -43,5 +44,22 @@ shinyServer(function(input, output)
       Y.hat
     })
     
-    }) 
+    })
+    
+#    La parte de ggplot
+    dat <- reactive({
+      subset <- subset(iris, Species ==input$Especie)
+      output$matriz <-subset
+    })
+#    output$ggplotplot<-renderPlot({
+ #     p1 <- ggplot(dat() ,aes(x=Sepal.Length,y=Sepal.Width))+
+  #      geom_point() + theme_minimal()
+   #   p1
+    #  })
+    
+    
+
+    
+    
+    
 })
